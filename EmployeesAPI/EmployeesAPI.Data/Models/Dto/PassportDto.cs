@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeesAPI.Data.Models
+namespace EmployeesAPI.Data.Models.Dto
 {
-    public class Passport
+    public class PassportDto
     {
-        public int Id { get; set; }
         public string Type { get; set; }
+
+        [RegularExpression(@"^[0-9]*$")]
         public string Number { get; set; }
     }
 }

@@ -5,13 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeesAPI.Data.Models
+namespace EmployeesAPI.Data.Models.Dto
 {
-    public class Employee
+    public class EmployeeDto
     {
         public int Id { get; set; }
-
-        [RegularExpression(@"^[А-Я][а-яА-Я]*$")]
         public string Name { get; set; }
 
         [RegularExpression(@"^[А-Я][а-яА-Я]*$")]
@@ -22,12 +20,8 @@ namespace EmployeesAPI.Data.Models
 
         public int CompanyID { get; set; }
 
-        public int? PassportId { get; set; }
+        public PassportDto Passport { get; set; }
 
-        public int? DepartmentId { get; set; }
-
-        public Passport Passport { get; set; }
-
-        public Department Department { get; set; }
+        public DepartmentDto Department { get; set; }
     }
 }

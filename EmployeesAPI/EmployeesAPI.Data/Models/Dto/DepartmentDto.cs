@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeesAPI.Data.Models
+namespace EmployeesAPI.Data.Models.Dto
 {
-    public class Department
+    public class DepartmentDto
     {
-        public int Id { get; set; }
-
         public string dName { get; set; }
 
         [RegularExpression(@"(8)?[0-9]{10}")]
