@@ -38,7 +38,7 @@ namespace EmployeesAPI.Controllers
         public async Task<IActionResult> GetEmployeesByDepartmentName(string name)
         {
             var result = await _employeeService.GetEmployeesByDepartmentName(name);
-            if(result == null)
+            if (result == null)
                 return NotFound();
             return Ok(result);
         }
@@ -82,7 +82,7 @@ namespace EmployeesAPI.Controllers
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             var result = await _employeeService.DeleteEmployee(id);
-            if(!result)
+            if (!result)
                 return NotFound();
             return NoContent();
         }

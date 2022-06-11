@@ -6,14 +6,15 @@ using EmployeesAPI.Domain.Abstractions;
 
 namespace EmployeesAPI.Domain.Repositories
 {
-    public class EmployeeRepository :IRepository<Employee>, IEmployeeRepository
+    public class EmployeeRepository : IRepository<Employee>, IEmployeeRepository
     {
-
         private readonly EmployeeContext _context;
+
         public EmployeeRepository(EmployeeContext context)
         {
             _context = context;
         }
+
         public async Task<int?> Add(Employee item)
         {
             try
@@ -51,7 +52,6 @@ namespace EmployeesAPI.Domain.Repositories
                         });
                     }
 
-
                     var parameters = new DynamicParameters();
                     parameters.Add("Name", item.Name, DbType.String);
                     parameters.Add("Surname", item.Surname, DbType.String);
@@ -67,7 +67,7 @@ namespace EmployeesAPI.Domain.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message); 
+                throw new Exception(ex.Message);
             }
         }
 
@@ -180,7 +180,7 @@ namespace EmployeesAPI.Domain.Repositories
 
                 if (await connection.QueryFirstAsync<int>(checkEmployee, new { id = item.Id }) == 0 ||
                         await connection.QueryFirstAsync<int>(checkDepartment, new { id = item.DepartmentId }) == 0 ||
-                        await connection.QueryFirstAsync<int>(checkPassport, new { id = item.PassportId }) == 0 )
+                        await connection.QueryFirstAsync<int>(checkPassport, new { id = item.PassportId }) == 0)
                 {
                     return false;
                 }

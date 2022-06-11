@@ -10,11 +10,13 @@ namespace EmployeesAPI.Domain.Services
     {
         private IEmployeeRepository _employeeRepository;
         private IMapper _mapper;
+
         public EmployeeService(EmployeeRepository employeeRepository, IMapper mapper)
         {
             _employeeRepository = employeeRepository;
             _mapper = mapper;
         }
+
         public async Task<int?> AddEmployee(EmployeeDto employeeDto)
         {
             var employee = _mapper.Map<Employee>(employeeDto);
@@ -43,7 +45,7 @@ namespace EmployeesAPI.Domain.Services
         {
             List<EmployeeDto> employees = new List<EmployeeDto>();
             var result = await _employeeRepository.GetAllByDepartmentName(name);
-            foreach(var employee in result)
+            foreach (var employee in result)
             {
                 employees.Add(_mapper.Map<EmployeeDto>(employee));
             }

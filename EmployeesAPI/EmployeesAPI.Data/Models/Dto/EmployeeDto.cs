@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-
 namespace EmployeesAPI.Data.Models.Dto
 {
     public class EmployeeDto
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
 
         [RegularExpression(@"^[А-Я][а-яА-Я]*$")]
