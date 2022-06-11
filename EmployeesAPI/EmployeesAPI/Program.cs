@@ -1,7 +1,6 @@
 using EmployeesAPI.Data;
 using EmployeesAPI.Domain.Repositories;
 using EmployeesAPI.Profiles;
-using AutoMapper;
 using EmployeesAPI.Domain.Services;
 using Microsoft.OpenApi.Models;
 using System.Reflection;

@@ -1,5 +1,4 @@
 ﻿using EmployeesAPI.Data.Models;
-using EmployeesAPI.Domain.Abstractions;
 
 namespace EmployeesAPI.Domain.Abstractions
 {
